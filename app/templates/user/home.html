@@ -4,11 +4,21 @@
 
 {% block main%}
 
-<div class="container">
+<div class="container mt-4">
     <div class="row">
         <div class="col">
             <h1>Home</h1>
-            <h1>I'm a user</h1>
+            <h2>Welcome, {{ user.email }}!</h2>
+            <h3>Select a color to add to your cart:</h3>
+            <div class="row">
+                {% for color in ["red", "blue", "green", "yellow", "purple"] %}
+                <div class="col-md-2 mb-3">
+                    <a href="{{ url_for('add_to_cart', color=color) }}" class="btn btn-block" style="background-color: {{ color }}; color: white">
+                        {{ color.capitalize() }}
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </div>
