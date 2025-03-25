@@ -44,12 +44,6 @@ def signup():
             flash("Invalid email address", "error")
             return redirect(url_for('signup'))
         
-        if len(password) > 20:
-            flash("Password too long", "error")
-            return redirect(url_for('signup'))
-        elif len(password) <8:
-            flash("Password too short", "error")
-            return redirect(url_for('signup'))
         elif password == "":
             flash("Password cannot be empty", "error")
             return redirect(url_for('signup'))
