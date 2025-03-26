@@ -1,0 +1,9 @@
+.alert {
+    overflow: hidden;
+}
+
+.alert.closing {
+    height: 0 !important;
+    opacity: 0 !important;
+    transition: height 0.5s ease, opacity 0.5s ease;
+  }
