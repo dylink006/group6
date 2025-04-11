@@ -123,6 +123,21 @@ def cart():
         cart_colors = []
     return render_template("/user/cart.html", user=current_user, cart_colors=cart_colors)
 
+@app.route("/checkout", methods=["GET", "POST"])
+@login_required
+def checkout():
+    try:
+        purchased_items = json.loads(current_user.cart)
+    except Exception:
+        purchased_items = []
+    
+    current_user.cart = json.dumps([])
+    db.session.commit()
+
+    flash("Thank you for your purchase! You will be redirected shortly to continue shopping.", "success")
+
+    return render_template('/user/checkout.html', user=current_user, purchased_items=purchased_items)
+
 
 with app.app_context():
     db.create_all()

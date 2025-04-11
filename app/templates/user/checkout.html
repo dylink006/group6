@@ -1,0 +1,26 @@
+{% extends "/user/templates/base-user.html" %}
+
+{% block title %}Checkout Confirmation{% endblock %}
+
+{% block head_extra %}
+
+<meta http-equiv="refresh" content="8;url={{ url_for('index') }}">
+
+{% endblock %}
+
+{% block main%}
+
+<div class="container text-center">
+    <h1>Thank You For Your Purchase!</h1>
+    <p>You bought the following items:</p>
+    <ul class="list-group">
+        {% for item in purchased_items %}
+        <li class="list-group-item" style="background-color: {{ item }};">
+            {{ item.capitalize() }}
+        </li>
+        {% endfor %}
+    </ul>
+    <p>Thank you for making AthletiCart a part of your health and fitness journey!</p>
+</div>
+
+{% endblock %}
