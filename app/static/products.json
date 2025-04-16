@@ -1,0 +1,584 @@
+[
+  {
+    "title": "Yoga Mat",
+    "price": 24.99,
+    "image": "/static/product-images/yoga-mat.png",
+    "description": "Premium non-slip yoga mat designed for ultimate comfort and stability."
+  },
+  {
+    "title": "Resistance Bands Set",
+    "price": 29.99,
+    "image": "/static/product-images/resistance-bands.png",
+    "description": "Versatile set of resistance bands ideal for strength training and stretching."
+  },
+  {
+    "title": "Whey Protein Powder",
+    "price": 49.99,
+    "image": "/static/product-images/whey.png",
+    "description": "High-quality whey protein for muscle recovery and growth."
+  },
+  {
+    "title": "Adjustable Dumbbells",
+    "price": 99.99,
+    "image": "/static/product-images/dumbells.png",
+    "description": "Space-saving adjustable dumbbells perfect for varied strength training workouts."
+  },
+  {
+    "title": "Fitness Tracker Watch",
+    "price": 79.99,
+    "image": "/static/product-images/watch.png",
+    "description": "Smart fitness tracker that monitors your heart rate, steps, and sleep quality."
+  },
+  {
+    "title": "Trail Running Shoes",
+    "price": 89.99,
+    "image": "/static/product-images/trail-shoes.png",
+    "description": "Durable and lightweight trail running shoes for diverse terrains."
+  },
+  {
+    "title": "Insulated Water Bottle",
+    "price": 19.99,
+    "image": "/static/product-images/water-bottle.png",
+    "description": "Sleek water bottle that keeps your beverages cool or warm during workouts."
+  },
+  {
+    "title": "Compact Treadmill",
+    "price": 399.99,
+    "image": "/static/product-images/treadmill.png",
+    "description": "Foldable treadmill ideal for home gyms with adjustable speed and incline."
+  },
+  {
+    "title": "Elliptical Trainer",
+    "price": 599.99,
+    "image": "/static/product-images/elliptical.png",
+    "description": "Low-impact elliptical machine providing a smooth, full-body workout."
+  },
+  {
+    "title": "Rowing Machine",
+    "price": 349.99,
+    "image": "/static/product-images/row.png",
+    "description": "High-performance rowing machine offering both cardio and strength benefits."
+  },
+  {
+    "title": "Kettlebell Set",
+    "price": 119.99,
+    "image": "/static/product-images/kettlebell.png",
+    "description": "Durable kettlebell set available in multiple weights for versatile training."
+  },
+  {
+    "title": "Punching Bag",
+    "price": 79.99,
+    "image": "/static/product-images/punching-bag.png",
+    "description": "Heavy-duty punching bag designed for boxing and martial arts workouts."
+  },
+  {
+    "title": "Speed Jump Rope",
+    "price": 14.99,
+    "image": "/static/product-images/speed-rope.png",
+    "description": "Adjustable jump rope perfect for cardio, agility, and endurance training."
+  },
+  {
+    "title": "Balance Board",
+    "price": 39.99,
+    "image": "/static/product-images/board.png",
+    "description": "Innovative balance board to enhance core strength and improve coordination."
+  },
+  {
+    "title": "Weighted Medicine Ball",
+    "price": 24.99,
+    "image": "/static/product-images/medicine-ball.png",
+    "description": "Durable medicine ball ideal for strength training and functional exercises."
+  },
+  {
+    "title": "Pilates Ring",
+    "price": 19.99,
+    "image": "/static/product-images/pilates-ring.png",
+    "description": "Compact pilates ring designed to tone muscles and improve flexibility."
+  },
+  {
+    "title": "Doorway Pull-Up Bar",
+    "price": 29.99,
+    "image": "/static/product-images/pullup.png",
+    "description": "Easy-to-install pull-up bar for effective upper body workouts at home."
+  },
+  {
+    "title": "Home Gym Power Rack",
+    "price": 499.99,
+    "image": "/static/product-images/rack.png",
+    "description": "Robust power rack built for heavy-duty home strength training sessions."
+  },
+  {
+    "title": "Stationary Spin Bike",
+    "price": 299.99,
+    "image": "/static/product-images/bike.png",
+    "description": "High-intensity spin bike designed for dynamic indoor cycling workouts."
+  },
+  {
+    "title": "Ab Roller Wheel",
+    "price": 14.99,
+    "image": "/static/product-images/wheel.png",
+    "description": "Compact ab roller that targets core muscles and enhances stability."
+  },
+  {
+    "title": "Extra Thick Exercise Mat",
+    "price": 34.99,
+    "image": "/static/product-images/thick-mat.png",
+    "description": "Cushioned exercise mat providing superior comfort for yoga and workouts."
+  },
+  {
+    "title": "Fitness Training Gloves",
+    "price": 12.99,
+    "image": "/static/product-images/gloves.png",
+    "description": "Protective gloves engineered for a secure grip during strength training."
+  },
+  {
+    "title": "Moisture-Wicking Sports Headband",
+    "price": 9.99,
+    "image": "/static/product-images/sweatband.png",
+    "description": "Lightweight headband designed to keep sweat in check during intense sessions."
+  },
+  {
+    "title": "Wireless Workout Earbuds",
+    "price": 59.99,
+    "image": "/static/product-images/earbuds.png",
+    "description": "High-quality wireless earbuds providing excellent sound for your workouts."
+  },
+  {
+    "title": "Multifunctional Gym Bag",
+    "price": 39.99,
+    "image": "/static/product-images/bag.png",
+    "description": "Spacious and durable gym bag with multiple compartments for all essentials."
+  },
+  {
+    "title": "Microfiber Sweat Towel",
+    "price": 7.99,
+    "image": "/static/product-images/towel.png",
+    "description": "Ultra-soft, quick-drying towel perfect for intense gym and fitness sessions."
+  },
+  {
+    "title": "Resistance Loop Bands",
+    "price": 14.99,
+    "image": "/static/product-images/bands.png",
+    "description": "Set of loop bands ideal for stretching, strength training, and rehabilitation."
+  },
+  {
+    "title": "Performance Sports Socks",
+    "price": 12.99,
+    "image": "/static/product-images/socks.png",
+    "description": "Comfortable and durable socks engineered for high-performance athletic activities."
+  },
+  {
+    "title": "High-Performance Leggings",
+    "price": 29.99,
+    "image": "/static/product-images/leggings.png",
+    "description": "Stretchable and breathable leggings designed for workouts and casual wear."
+  },
+  {
+    "title": "Breathable Running Shorts",
+    "price": 19.99,
+    "image": "/static/product-images/running-shorts.png",
+    "description": "Lightweight running shorts engineered for maximum comfort and performance."
+  },
+  {
+    "title": "BCAA Supplement Capsules",
+    "price": 24.99,
+    "image": "/static/product-images/bcaa.png",
+    "description": "Essential branched-chain amino acids supplement to support muscle recovery."
+  },
+  {
+    "title": "Pre-Workout Energy Booster",
+    "price": 34.99,
+    "image": "/static/product-images/pre-workout.png",
+    "description": "Powerful formula to boost energy levels and enhance workout performance."
+  },
+  {
+    "title": "Post-Workout Shake Mixer",
+    "price": 19.99,
+    "image": "/static/product-images/mixer.png",
+    "description": "Innovative shake mixer bottle designed to effortlessly blend protein shakes."
+  },
+  {
+    "title": "Deep Tissue Massage Gun",
+    "price": 129.99,
+    "image": "/static/product-images/massage-gun.png",
+    "description": "Rechargeable massage gun that targets muscle soreness and accelerates recovery."
+  },
+  {
+    "title": "Stretching Assistance Strap",
+    "price": 9.99,
+    "image": "/static/product-images/stretch-strap.png",
+    "description": "Flexible strap designed to help you achieve deeper, safer stretches."
+  },
+  {
+    "title": "Smart Jump Rope",
+    "price": 24.99,
+    "image": "/static/product-images/jump-rope.png",
+    "description": "High-tech jump rope that tracks jumps, calories burned, and workout time."
+  },
+  {
+    "title": "Balance Ball Chair",
+    "price": 89.99,
+    "image": "/static/product-images/ball-chair.png",
+    "description": "Ergonomic balance ball chair designed to boost core strength and improve posture."
+  },
+  {
+    "title": "Anti-Burst Stability Ball",
+    "price": 19.99,
+    "image": "/static/product-images/stability-ball.png",
+    "description": "Reinforced stability ball that resists punctures, ideal for any fitness level."
+  },
+  {
+    "title": "Weighted Training Vest",
+    "price": 59.99,
+    "image": "/static/product-images/vest.png",
+    "description": "Adjustable weighted vest perfect for increasing resistance in your workouts."
+  },
+  {
+    "title": "Agility Speed Ladder",
+    "price": 24.99,
+    "image": "/static/product-images/ladder.png",
+    "description": "Portable speed ladder designed to improve coordination, agility, and speed."
+  },
+  {
+    "title": "Agility Cone Set",
+    "price": 17.99,
+    "image": "/static/product-images/cones.png",
+    "description": "Set of agility cones ideal for drills focused on speed and quick direction changes."
+  },
+  {
+    "title": "Heavy Battle Rope",
+    "price": 49.99,
+    "image": "/static/product-images/rope.png",
+    "description": "Durable battle rope engineered for high-intensity workouts and full-body conditioning."
+  },
+  {
+    "title": "Gymnastic Rings",
+    "price": 29.99,
+    "image": "/static/product-images/rings.png",
+    "description": "Set of gymnastic rings designed for suspension training and versatile workouts."
+  },
+  {
+    "title": "Adjustable Fitness Bench",
+    "price": 79.99,
+    "image": "/static/product-images/bench.png",
+    "description": "Multifunctional adjustable bench suited for various strength training exercises."
+  },
+  {
+    "title": "Yoga Blocks Set",
+    "price": 14.99,
+    "image": "/static/product-images/yoga-blocks.png",
+    "description": "Durable yoga blocks that aid in alignment, balance, and deep stretching."
+  },
+  {
+    "title": "Comfort Meditation Cushion",
+    "price": 39.99,
+    "image": "/static/product-images/cushion.png",
+    "description": "Ergonomic meditation cushion designed for extended mindfulness and comfort."
+  },
+  {
+    "title": "Infrared Sauna Blanket",
+    "price": 199.99,
+    "image": "/static/product-images/sauna-blanket.png",
+    "description": "Portable infrared sauna blanket designed to promote relaxation and detoxification."
+  },
+  {
+    "title": "Smart Body Scale",
+    "price": 39.99,
+    "image": "/static/product-images/scale.png",
+    "description": "Advanced scale that measures weight, body fat, and other vital metrics with smart connectivity."
+  },
+  {
+    "title": "Bluetooth Heart Rate Monitor Chest Strap",
+    "price": 34.99,
+    "image": "/static/product-images/heart-monitor.png",
+    "description": "Chest strap heart rate monitor with Bluetooth connectivity for real-time fitness tracking."
+  },
+  {
+    "title": "Portable Protein Shaker Bottle",
+    "price": 12.99,
+    "image": "/static/product-images/protein-bottle.png",
+    "description": "Leak-proof shaker bottle featuring an in-built mixer, ideal for on-the-go protein shakes."
+  },
+  {
+    "title": "Adjustable Ankle Weights",
+    "price": 29.99,
+    "image": "/static/product-images/ankle-weights.png",
+    "description": "Versatile ankle weights with adjustable resistance to intensify lower body workouts."
+  },
+  {
+    "title": "Fitness Resistance Parachute",
+    "price": 24.99,
+    "image": "/static/product-images/parachute.jpeg",
+    "description": "High-quality resistance parachute designed to enhance sprint training and speed."
+  },
+  {
+    "title": "Vibration Platform Machine",
+    "price": 299.99,
+    "image": "/static/product-images/vibration.png",
+    "description": "Innovative vibration platform that stimulates muscles and boosts overall workout efficiency."
+  },
+  {
+    "title": "Under Desk Elliptical",
+    "price": 129.99,
+    "image": "/static/product-images/under-desk.png",
+    "description": "Compact elliptical machine designed to fit under your desk for low-impact cardio workouts."
+  },
+  {
+    "title": "Plyometric Box Set",
+    "price": 89.99,
+    "image": "/static/product-images/​​plyometric.png",
+    "description": "Durable set of plyometric boxes perfect for jump training and explosive strength exercises."
+  },
+  {
+    "title": "Core Balance Discs",
+    "price": 19.99,
+    "image": "/static/product-images/inflate.png",
+    "description": "Inflatable balance discs to improve core strength, stability, and proprioception during workouts."
+  },
+  {
+    "title": "Multi-Functional Abdominal Trainer",
+    "price": 44.99,
+    "image": "/static/product-images/ab-trainer.png",
+    "description": "Innovative device designed to target and tone core muscles through varied resistance settings."
+  },
+  {
+    "title": "Grip Strengthener",
+    "price": 9.99,
+    "image": "/static/product-images/grip-strengthener.jpg",
+    "description": "Compact hand exerciser crafted to improve grip strength and overall hand endurance."
+  },
+  {
+    "title": "Adjustable Weightlifting Belt",
+    "price": 34.99,
+    "image": "/static/product-images/belt.jpg",
+    "description": "Ergonomic weightlifting belt with adjustable sizing for enhanced back support during heavy lifts."
+  },
+  {
+    "title": "Compression Recovery Sleeves",
+    "price": 19.99,
+    "image": "/static/product-images/sleeves.png",
+    "description": "Supportive compression sleeves designed to accelerate muscle recovery and reduce fatigue."
+  },
+  {
+    "title": "Knee Support Brace",
+    "price": 24.99,
+    "image": "/static/product-images/knee-brace.png",
+    "description": "Durable knee brace engineered to provide joint stability and prevent injuries during exercise."
+  },
+  {
+    "title": "Smart Hydration Water Bottle",
+    "price": 22.99,
+    "image": "/static/product-images/smart-bottle.png",
+    "description": "Innovative water bottle with smart reminders to keep you hydrated throughout your workout."
+  },
+  {
+    "title": "Portable Smoothie Blender",
+    "price": 39.99,
+    "image": "/static/product-images/blender.png",
+    "description": "Battery-powered blender perfect for making healthy protein smoothies and shakes anywhere."
+  },
+  {
+    "title": "Exercise Dice Set",
+    "price": 14.99,
+    "image": "/static/product-images/dice.png",
+    "description": "Fun set of exercise dice to randomize your workouts and add variety to fitness routines."
+  },
+  {
+    "title": "Posture Corrector",
+    "price": 19.99,
+    "image": "/static/product-images/posture.png",
+    "description": "Adjustable posture corrector designed to relieve back tension and promote proper spinal alignment."
+  },
+  {
+    "title": "Fitness Lifestyle Journal",
+    "price": 12.99,
+    "image": "/static/product-images/journal.png",
+    "description": "Compact journal to log workouts, nutrition, and track your progress towards fitness goals."
+  },
+  {
+    "title": "Adjustable Aerobic Step Platform",
+    "price": 27.99,
+    "image": "/static/product-images/step-platform.png",
+    "description": "Lightweight and adjustable step platform designed for cardio and step aerobics workouts."
+  },
+  {
+    "title": "Balance Disc Air Cushion",
+    "price": 17.99,
+    "image": "/static/product-images/balance-disc.png",
+    "description": "Unstable air cushion to challenge balance and core stability during exercises."
+  },
+  {
+    "title": "Resistance Training Parallettes",
+    "price": 29.99,
+    "image": "/static/product-images/parallettes.png",
+    "description": "Sturdy parallettes for bodyweight exercises, perfect for building upper body and core strength."
+  },
+  {
+    "title": "Speed Agility Hurdles",
+    "price": 19.99,
+    "image": "/static/product-images/hurdles.png",
+    "description": "Lightweight and adjustable hurdles designed to enhance speed, agility, and coordination."
+  },
+  {
+    "title": "Portable Massage Roller Stick",
+    "price": 21.99,
+    "image": "/static/product-images/roller-stick.png",
+    "description": "Handheld roller stick that delivers targeted massage to relieve muscle tension and soreness."
+  },
+  {
+    "title": "Cold Therapy Ice Pack",
+    "price": 9.99,
+    "image": "/static/product-images/ice-pack.png",
+    "description": "Reusable gel ice pack ideal for reducing swelling and soothing sore muscles post-workout."
+  },
+  {
+    "title": "Muscle Heating Pad for Relaxation",
+    "price": 24.99,
+    "image": "/static/product-images/heating-pad.png",
+    "description": "Electric heating pad designed to deliver deep heat therapy for muscle relaxation and pain relief."
+  },
+  {
+    "title": "Muscle Recovery Compression Socks",
+    "price": 19.99,
+    "image": "/static/product-images/compression-socks.png",
+    "description": "High-performance compression socks that improve circulation and accelerate post-workout recovery."
+  },
+  {
+    "title": "Foam Roller Stick for Recovery",
+    "price": 26.99,
+    "image": "/static/product-images/foam-roller.png",
+    "description": "Slim foam roller stick designed for targeted muscle recovery and fascia release."
+  },
+  {
+    "title": "Vertical Jump Trainer",
+    "price": 32.99,
+    "image": "/static/product-images/jump-trainer.png",
+    "description": "Specialized device to help improve vertical leap and explosive lower body strength."
+  },
+  {
+    "title": "Elastic Resistance Tubing",
+    "price": 15.99,
+    "image": "/static/product-images/elastic-tubing.png",
+    "description": "Durable elastic tubing for a versatile range of strength training and rehabilitation exercises."
+  },
+  {
+    "title": "Portable Pilates Reformer",
+    "price": 349.99,
+    "image": "/static/product-images/pilates-reformer.png",
+    "description": "Compact and portable reformer designed to bring professional Pilates workouts into your home."
+  },
+  {
+    "title": "Home Gym Power Tower",
+    "price": 259.99,
+    "image": "/static/product-images/power-tower.png",
+    "description": "Robust power tower featuring pull-ups, dips, and other bodyweight exercises for a complete home gym setup."
+  },
+  {
+    "title": "Electric Heated Towel Warmer",
+    "price": 49.99,
+    "image": "/static/product-images/towel-warmer.png",
+    "description": "Keep your workout towels cozy and warm with this energy-efficient heated towel warmer."
+  },
+  {
+    "title": "Microwaveable Muscle Heat Pack",
+    "price": 14.99,
+    "image": "/static/product-images/heat-pack.png",
+    "description": "Convenient, microwaveable heat pack designed to soothe sore muscles and enhance recovery."
+  },
+  {
+    "title": "Smart Fitness Mirror",
+    "price": 449.99,
+    "image": "/static/product-images/smart-mirror.png",
+    "description": "Interactive mirror with built-in training programs to guide your workouts and monitor your form."
+  },
+  {
+    "title": "Eco-Friendly Yoga Leggings",
+    "price": 34.99,
+    "image": "/static/product-images/sustainable-leggings.png",
+    "description": "Sustainable, high-stretch yoga leggings crafted from eco-friendly materials for a comfortable fit."
+  },
+  {
+    "title": "Bamboo Workout Shorts",
+    "price": 24.99,
+    "image": "/static/product-images/bamboo-shorts.png",
+    "description": "Breathable, lightweight workout shorts made from bamboo fiber for a natural, cool feel."
+  },
+  {
+    "title": "Reversible Sports Jacket",
+    "price": 39.99,
+    "image": "/static/product-images/sports-jacket.png",
+    "description": "Versatile sports jacket with dual-sided designs to match your style and weather conditions."
+  },
+  {
+    "title": "High-Density Office Seat Cushion",
+    "price": 21.99,
+    "image": "/static/product-images/seat-cushion.png",
+    "description": "Ergonomically designed seat cushion for improved posture and comfort during long office hours."
+  },
+  {
+    "title": "Portable Mini Trampoline",
+    "price": 59.99,
+    "image": "/static/product-images/trampoline.png",
+    "description": "Compact indoor trampoline ideal for low-impact cardio and fun, engaging workouts."
+  },
+  {
+    "title": "Adjustable Barbell Set",
+    "price": 199.99,
+    "image": "/static/product-images/versatile-barbell.png",
+    "description": "Versatile barbell set with adjustable weights designed to grow with your strength training regimen."
+  },
+  {
+    "title": "Suspension Training System",
+    "price": 74.99,
+    "image": "/static/product-images/suspension-trainer.png",
+    "description": "Comprehensive suspension trainer offering a wide range of bodyweight exercises with adjustable difficulty."
+  },
+  {
+    "title": "Foldable Exercise Stool",
+    "price": 29.99,
+    "image": "/static/product-images/foldable-chair.png",
+    "description": "Lightweight, foldable stool that serves as a portable seat or step for various exercise routines."
+  },
+  {
+    "title": "Multi-Chamber Hydration Bottle",
+    "price": 19.99,
+    "image": "/static/product-images/multi-chamber-hydration-bottle.png",
+    "description": "Innovatively designed hydration bottle with separate chambers for water, supplements, and flavor enhancers."
+  },
+  {
+    "title": "Smart Exercise Resistance System",
+    "price": 89.99,
+    "image": "/static/product-images/interactive-resistance-system.png",
+    "description": "Interactive resistance system that adjusts difficulty levels in real time to match your workout intensity."
+  },
+  {
+    "title": "Adjustable Pilates Chair",
+    "price": 159.99,
+    "image": "/static/product-images/adjustable-pilates-chair.png",
+    "description": "Compact, adjustable chair designed for Pilates workouts to improve core strength and flexibility."
+  },
+  {
+    "title": "Balance Training Pod",
+    "price": 44.99,
+    "image": "/static/product-images/balance-training-pod.png",
+    "description": "Innovative balance pod that challenges stability and coordination for enhanced fitness routines."
+  },
+  {
+    "title": "Deep Tissue Massage Ball",
+    "price": 16.99,
+    "image": "/static/product-images/deep-tissue-massage-ball.png",
+    "description": "Small, high-density massage ball designed to target trigger points and relieve muscle tightness."
+  },
+  {
+    "title": "Portable Infrared Muscle Stimulator",
+    "price": 89.99,
+    "image": "/static/product-images/portable-infrared-muscle-stimulator.png",
+    "description": "Non-invasive infrared device that stimulates muscle recovery and reduces tension after workouts."
+  },
+  {
+    "title": "Digital Workout Timer",
+    "price": 14.99,
+    "image": "/static/product-images/digital-workout-timer.png",
+    "description": "Easy-to-use timer designed to track intervals and optimize your high-intensity training sessions."
+  }
+]

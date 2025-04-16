@@ -21,9 +21,12 @@ def load_user(user_id):
 
 @app.route("/")
 def index():
+    with open('app/static/products.json') as f:
+        products = json.load(f)
+
     if current_user.is_authenticated:
-        return render_template("/user/home.html", user=current_user)
-    return render_template("/public/home.html")
+        return render_template("/user/home.html", user=current_user, products=products)
+    return render_template("/public/home.html", products=products)
 
 @app.route("/about")
 def about():
@@ -84,59 +87,88 @@ def logout():
     flash('You have been logged out.', 'info')
     return redirect(url_for('login'))
 
-@app.route("/add_to_cart/<color>")
+@app.route("/add_to_cart/<int:product_id>", methods=["POST"])
 @login_required
-def add_to_cart(color):
+def add_to_cart(product_id):
     try:
+        with open('app/static/products.json') as f:
+            products = json.load(f)
+        
+        if product_id < 0 or product_id >= len(products):
+            raise ValueError("Invalid product ID")
+            
         cart = json.loads(current_user.cart)
-    except Exception:
-        cart = []
-    cart.append(color)
-    current_user.cart = json.dumps(cart)
-    db.session.commit()
-    flash(f"{color.capitalize()} added to your cart!", "success")
-    return redirect(url_for('index'))
-
-@app.route("/remove_from_cart/<color>", methods=["GET", "POST"])
-@login_required
-def remove_from_cart(color):
-    try:
-        cart=json.loads(current_user.cart)
-    except Exception:
-        cart = []
-
-    if color in cart:
-        cart.remove(color)
+        cart.append(product_id)
         current_user.cart = json.dumps(cart)
         db.session.commit()
-        flash(f"{color.capitalize()} removed from your cart!", "success")
-    else:
-        flash(f"{color.capitalize()} is not in your cart!", "warning")
+        
+        flash(f"{products[product_id]['title']} added to cart!", "success")
+    except Exception as e:
+        flash("Error adding product to cart", "danger")
+    
+    return redirect(url_for('index'))
+
+@app.route("/remove_from_cart/<int:product_id>", methods=["POST"])
+@login_required
+def remove_from_cart(product_id):
+    try:
+        cart = json.loads(current_user.cart)
+        if product_id in cart:
+            cart.remove(product_id)
+            current_user.cart = json.dumps(cart)
+            db.session.commit()
+            flash("Product removed from cart!", "success")
+        else:
+            flash("Product not in cart", "warning")
+    except Exception as e:
+        flash(f"Error removing product: {str(e)}", "danger")
     return redirect(url_for('cart'))
 
 @app.route("/cart")
 @login_required
 def cart():
     try:
-        cart_colors = json.loads(current_user.cart)
+        cart_ids = json.loads(current_user.cart)
     except Exception:
-        cart_colors = []
-    return render_template("/user/cart.html", user=current_user, cart_colors=cart_colors)
+        cart_ids = []
 
+    with open('app/static/products.json') as f:
+        all_products = json.load(f)
+    
+    cart_products = []
+    for pid in cart_ids:
+        if 0 <= pid < len(all_products):
+            product = all_products[pid].copy()
+            product['id'] = pid
+            cart_products.append(product) 
+    
+    return render_template("/user/cart.html", 
+                         user=current_user,
+                         cart_products=cart_products,
+                         total_price=sum(p['price'] for p in cart_products))
 @app.route("/checkout", methods=["GET", "POST"])
 @login_required
 def checkout():
     try:
-        purchased_items = json.loads(current_user.cart)
+        # Get product IDs from cart
+        cart_ids = json.loads(current_user.cart)
     except Exception:
-        purchased_items = []
+        cart_ids = []
+
+    # Load product data
+    with open('app/static/products.json') as f:
+        all_products = json.load(f)
     
+    # Convert IDs to product objects
+    purchased_products = [all_products[pid] for pid in cart_ids if pid < len(all_products)]
+    
+    # Clear cart
     current_user.cart = json.dumps([])
     db.session.commit()
-
-    flash("Thank you for your purchase! You will be redirected shortly to continue shopping.", "success")
-
-    return render_template('/user/checkout.html', user=current_user, purchased_items=purchased_items)
+    
+    return render_template('/user/checkout.html',
+                         user=current_user,
+                         purchased_items=purchased_products)
 
 
 with app.app_context():

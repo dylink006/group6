@@ -2,24 +2,35 @@
 
 {% block title %}Home{% endblock %}
 
-{% block main%}
-
-<div class="container mt-4">
-    <div class="row">
-        <div class="col">
-            <h1>Home</h1>
-            <h2>Welcome, {{ user.email }}!</h2>
-            <h3>Select a color to add to your cart:</h3>
-            <div class="row">
-                {% for color in ["red", "blue", "green", "yellow", "purple"] %}
-                <div class="col-md-2 mb-3">
-                    <a href="{{ url_for('add_to_cart', color=color) }}" class="btn btn-block" style="background-color: {{ color }}; color: white">
-                        {{ color.capitalize() }}
-                    </a>
+{% block main %}
+<div class="container py-5">
+    <h2 class="mb-4 text-center">Featured Products</h2>
+    <div class="row g-4">
+        {% for product in products %}
+        <div class="col-md-6 col-lg-4 col-xl-3">
+            <div class="card h-100 product-card shadow-sm">
+                <img src="{{ product.image }}" 
+                     class="card-img-top p-3" 
+                     alt="{{ product.title }}"
+                     loading="lazy">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{ product.title }}</h5>
+                    <p class="card-text text-muted small mb-3">
+                        {{ product.description }}
+                    </p>
+                    <div class="mt-auto">
+                        <p class="h5 text-primary">${{ "%.2f"|format(product.price) }}</p>
+                        <form action="/add_to_cart/{{ loop.index0 }}" method="POST">
+                            <button type="submit" 
+                                    class="btn btn-outline-primary w-100 mt-2">
+                                <i class="bi bi-cart-plus"></i> Add to Cart
+                            </button>
+                        </form>
+                    </div>
                 </div>
-                {% endfor %}
             </div>
         </div>
+        {% endfor %}
     </div>
 </div>
 
