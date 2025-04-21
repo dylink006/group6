@@ -1,15 +1,78 @@
 {% extends "/public/templates/base-public.html" %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Wekcome to AthletiCart{% endblock %}
 
 {% block main%}
 
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <h1>Welcome to the Public Home Page</h1>
-        </div>
+<section class="text-center py-5" 
+           style="background: linear-gradient(135deg, #11557C 0%, #229DD1 100%); color: white;">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Fuel Your Fitness Journey</h1>
+      <p class="lead mb-4">
+        Premium supplements, gear, and apparel to help you train harder and recover faster.
+      </p>
+      <a href="{{ url_for('signup') }}" 
+         class="btn btn-light btn-lg">
+        Sign Up for Free
+      </a>
     </div>
-</div>
+</section>
 
+<section class="container py-5">
+    <h2 class="mb-4 text-center">Sneak Peek: Top Picks</h2>
+
+    <div id="peekCarousel" 
+         class="carousel slide" 
+         data-bs-ride="carousel" 
+         data-bs-interval="3000">
+      
+      <div class="carousel-inner">
+        {# chunk the products into groups of 4 #}
+        {% for chunk in products|batch(4, None) %}
+          <div class="carousel-item {% if loop.first %}active{% endif %}">
+            <div class="row g-4">
+              {% for product in chunk if product %}
+                <div class="col-sm-6 col-md-3">
+                  <div class="card h-100 product-card shadow-sm">
+                    <img src="{{ product.image }}"
+                         class="card-img-top p-3"
+                         alt="{{ product.title }}"
+                         loading="lazy">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title">{{ product.title }}</h5>
+                      <p class="card-text text-muted small mb-3">
+                        {{ product.description }}
+                      </p>
+                      <div class="mt-auto text-center">
+                        <a href="{{ url_for('signup') }}"
+                           class="btn btn-outline-primary w-100">
+                          Sign Up to View &amp; Shop
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- controls (optional) -->
+      <button class="carousel-control-prev" 
+              type="button" 
+              data-bs-target="#peekCarousel" 
+              data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" 
+              type="button" 
+              data-bs-target="#peekCarousel" 
+              data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
 {% endblock %}
