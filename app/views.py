@@ -1,5 +1,5 @@
 from app import app, db, login_manager
-from flask import render_template, redirect, url_for, flash, request
+from flask import render_template, redirect, url_for, flash, jsonify, request
 from flask_login import UserMixin, login_user, login_required, logout_user, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
@@ -102,9 +102,16 @@ def add_to_cart(product_id):
         current_user.cart = json.dumps(cart)
         db.session.commit()
         
-        flash(f"{products[product_id]['title']} added to cart!", "success")
+        message = f"{products[product_id]['title']} added to cart!"
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            return jsonify(success=True, message=message), 200
+        else:
+            flash(message, "success")
     except Exception as e:
-        flash("Error adding product to cart", "danger")
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            return jsonify(success=False, message="Error adding to cart"), 500
+        else:
+            flash("Error adding product to cart", "danger")
     
     return redirect(url_for('index'))
 
@@ -117,12 +124,31 @@ def remove_from_cart(product_id):
             cart.remove(product_id)
             current_user.cart = json.dumps(cart)
             db.session.commit()
-            flash("Product removed from cart!", "success")
+
+            with open('app/static/products.json') as f:
+                products = json.load(f)
+            new_total = sum(
+                products[pid]['price']
+                for pid in cart
+                if 0 <= pid < len(products)
+            )
+
+            message = "Item removed from cart!"
+            if request.headers.get("X-Requested-With") == "XMLHttpRequest":
+                return jsonify(success=True, message=message, new_total=new_total), 200
+            flash(message, "success")
         else:
-            flash("Product not in cart", "warning")
+            message = "Item not in cart."
+            if request.headers.get("X-Requested-With") == "XMLHttpRequest":
+                return jsonify(success=False, message=message), 404
+            flash(message, "warning")
     except Exception as e:
-        flash(f"Error removing product: {str(e)}", "danger")
+        message = "Error removing product: " + str(e)
+        if request.headers.get("X-Requested-With") == "XMLHttpRequest":
+            return jsonify(success=False, message=message), 500
+        flash(message, "danger")
     return redirect(url_for('cart'))
+
 
 @app.route("/cart")
 @login_required

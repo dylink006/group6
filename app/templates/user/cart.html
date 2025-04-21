@@ -3,11 +3,13 @@
 {% block title %}Your Cart{% endblock %}
 
 {% block main %}
+<div id="flash-container" style="position: fixed; top: 1rem; right: 1rem; z-index: 1050;"></div>
+
 <div class="container py-5">
     <div class="cart-summary d-flex justify-content-between align-items-center mb-4 p-3 bg-light rounded shadow-sm">
-        <h4 class="mb-0">Total: ${{ "%.2f"|format(total_price) }}</h4>
+        <h4 id="cart-total" class="mb-0">Total: ${{ "%.2f"|format(total_price) }}</h4>
         {% if cart_products|length > 0 %}
-        <a href="/checkout" class="btn btn-success btn-lg">
+        <a id="checkout-btn" href="/checkout" class="btn btn-success btn-lg">
             Checkout <i class="bi bi-arrow-right"></i>
         </a>
         {% endif %}
@@ -15,7 +17,7 @@
 
     <div class="row g-4">
         {% for product in cart_products %}
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-4 cart-item" data-product-id="{{ product.id }}">
             <div class="card h-100">
                 <img src="{{ product.image }}" 
                      class="card-img-top p-3" 
@@ -42,5 +44,66 @@
         {% endfor %}
     </div>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Attach to every remove form
+      document.querySelectorAll(".cart-item form").forEach(form => {
+        form.addEventListener("submit", e => {
+          e.preventDefault();
+          fetch(form.action, {
+            method: "POST",
+            headers: { "X-Requested-With": "XMLHttpRequest" },
+            credentials: "same-origin"
+          })
+          .then(res => res.json())
+          .then(data => {
+            // Build the Bootstrap alert
+            const alertDiv = document.createElement("div");
+            alertDiv.className = data.success
+              ? "alert alert-success alert-dismissible fade show"
+              : "alert alert-danger alert-dismissible fade show";
+            alertDiv.role = "alert";
+            alertDiv.innerHTML = data.message +
+              '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>';
+            document.getElementById("flash-container").append(alertDiv);
+    
+            // Remove the card from the page if successful
+            if (data.success) {
+              const cardCol = form.closest(".cart-item");
+              cardCol.remove();
+
+                if (typeof data.new_total === "number") {
+                    document.getElementById("cart-total").textContent =
+                    `Total: $${data.new_total.toFixed(2)}`;
+                }
+
+                if (data.new_total <= 0) {
+                    const btn = document.getElementById("checkout-btn");
+                    if (btn) btn.style.display = "none";
+
+                    const emptyHtml = `
+                        <div class="col-12 text-center py-5">
+                            <h4>Your cart is empty</h4>
+                            <a href="/" class="btn btn-primary mt-3">Continue Shopping</a>
+                        </div>`;
+                    document.querySelector(".row.g-4").innerHTML = emptyHtml;
+                }
+            }
+    
+            // Auto-dismiss after 3 seconds
+            setTimeout(() => {
+              alertDiv.classList.add("closing");
+              alertDiv.addEventListener("transitionend", () => alertDiv.remove());
+            }, 3000);
+          })
+          .catch(() => {
+            alert("Could not remove item. Please try again.");
+          });
+        });
+      });
+    });
+</script>
+    
 
 {% endblock %}

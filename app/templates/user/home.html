@@ -34,4 +34,40 @@
     </div>
 </div>
 
+<div id="flash-container" style="position:fixed;top:1rem;right:1rem;z-index:1050;"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.product-card form').forEach(form => {
+    form.addEventListener('submit', e => {
+      e.preventDefault();                           // stop full‐page reload
+      fetch(form.action, {
+        method: 'POST',
+        headers: { 'X-Requested-With': 'XMLHttpRequest' },
+        credentials: 'same-origin'
+      })
+      .then(r => r.json())
+      .then(data => {
+        // build a Bootstrap alert
+        const alertDiv = document.createElement('div');
+        alertDiv.className = data.success
+          ? 'alert alert-success alert-dismissible fade show'
+          : 'alert alert-danger alert-dismissible fade show';
+        alertDiv.role = 'alert';
+        alertDiv.innerHTML = data.message +
+          '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>';
+        document.getElementById('flash-container').append(alertDiv);
+
+        // auto‐dismiss after 3s
+        setTimeout(() => {
+          alertDiv.classList.add('closing');
+          alertDiv.addEventListener('transitionend', () => alertDiv.remove());
+        }, 3000);
+      })
+      .catch(() => alert('Could not add to cart. Please try again.'));
+    });
+  });
+});
+</script>
+
 {% endblock %}
